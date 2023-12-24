@@ -27,6 +27,11 @@
 			</ul>
 			
 			<ul class="navbar-nav">
+				<li><a href="signup.html"
+					 class="nav-link">New Admin</a></li>
+			</ul>
+			
+			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/logout"
 					 class="nav-link">Logout</a></li>
 			</ul>

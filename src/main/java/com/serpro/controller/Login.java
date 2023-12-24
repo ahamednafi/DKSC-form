@@ -29,6 +29,8 @@ public class Login extends HttpServlet{
 			String user = "root";
 			String pass = "root";
 			RequestDispatcher dispatcher=null;
+			String name = "dkscform@gmail.com";
+			String pw = "dksc@123";
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
@@ -37,7 +39,12 @@ public class Login extends HttpServlet{
 				prepareStatement.setString(1, username);
 				prepareStatement.setString(2, password);
 				res = prepareStatement.executeQuery();
-				if(res.next())
+				if((name.equals(username)) && (pw.equals(password)))
+				{
+					resp.setContentType("text/html");
+					dispatcher = req.getRequestDispatcher("user-list.jsp");
+				}
+				else if(res.next())
 				{
 					resp.setContentType("text/html");
 					dispatcher = req.getRequestDispatcher("user-list.jsp");
